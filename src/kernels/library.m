@@ -17,20 +17,19 @@ mtNewDefaultLibrary(MtDevice *device) {
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtLibrary*
-mtNewLibraryWithFile(MtDevice *device, char *filepath, NsError *error) {
+mtNewLibraryWithFile(MtDevice *device, char *filepath, NsError **error) {
   return [(id<MTLDevice>)device newLibraryWithFile: mtNSString(filepath) error:(NSError**)&error];
 }
 
 CF_RETURNS_RETAINED
 MT_EXPORT
 MtLibrary*
-mtNewLibraryWithSource(MtDevice *device, char *source, MtCompileOptions *Opts, NsError *
-  error) {
+mtNewLibraryWithSource(MtDevice *device, char *source, MtCompileOptions *Opts, NsError **error) {
   NSError *_err;
   MtLibrary* lib = [(id<MTLDevice>)device newLibraryWithSource: mtNSString(source) 
   								                           options: (MTLCompileOptions*)Opts 
   								                             error: &_err];
-  *error = _err; 
+  *error = _err;
   return lib;
 }
 

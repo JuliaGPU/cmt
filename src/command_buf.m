@@ -28,7 +28,16 @@ mtCommandBufferOnComplete(MtCommandQueue * __restrict cmdb,
                           void           * __restrict sender,
                           MtCommandBufferOnCompleteFn oncomplete) {
   [(id<MTLCommandBuffer>)cmdb addCompletedHandler:^(id<MTLCommandBuffer> buffer) {
-    oncomplete(sender, cmdb);
+    oncomplete(sender, buffer);
+  }];
+}
+
+MT_EXPORT
+void
+mtCommandBufferOnCompleteNoSender(MtCommandQueue * __restrict cmdb,
+                          MtCommandBufferOnCompleteFnNoSender oncomplete) {
+  [(id<MTLCommandBuffer>)cmdb addCompletedHandler:^(id<MTLCommandBuffer> buffer) {
+    oncomplete(buffer);
   }];
 }
 

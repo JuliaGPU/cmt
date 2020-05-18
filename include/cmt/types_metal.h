@@ -83,10 +83,8 @@ typedef void MtPointerType;
 typedef void MtArrayType;
 typedef void MtStructType;
 
-typedef void MtComputePipelineReflection_s;
-typedef void MtRenderPipelineReflection_s;
-typedef MtComputePipelineReflection_s* MtComputePipelineReflection;
-typedef MtRenderPipelineReflection_s* MtRenderPipelineReflection;
+typedef void MtComputePipelineReflection;
+typedef void MtRenderPipelineReflection;
 
 
 typedef struct {

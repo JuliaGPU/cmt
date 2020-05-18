@@ -25,8 +25,7 @@ typedef struct NsRange {
     NsUInteger length;
 } NsRange;
 
-typedef void NsError_s;
-typedef NsError_s* NsError;
+typedef void NsError;
 
 typedef struct {
 	char ** keys;

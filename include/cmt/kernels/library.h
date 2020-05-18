@@ -20,11 +20,11 @@ mtNewDefaultLibrary(MtDevice *device);
 
 MT_EXPORT
 MtLibrary*
-mtNewLibraryWithFile(MtDevice *device, char *filepath, NsError *error);
+mtNewLibraryWithFile(MtDevice *device, char *filepath, NsError **error);
 
 MT_EXPORT
 MtLibrary*
-mtNewLibraryWithSource(MtDevice *device, char *source, MtCompileOptions *Opts, NsError *error);
+mtNewLibraryWithSource(MtDevice *device, char *source, MtCompileOptions *Opts, NsError **error);
 
 MT_EXPORT
 void

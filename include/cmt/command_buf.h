@@ -16,6 +16,8 @@ extern "C" {
 typedef void (*MtCommandBufferOnCompleteFn)(void            * __restrict sender,
                                             MtCommandBuffer * __restrict cmdb);
 
+typedef void (*MtCommandBufferOnCompleteFnNoSender)( MtCommandBuffer * __restrict cmdb);
+
 MT_EXPORT
 MtCommandBuffer*
 mtNewCommandBuffer(MtCommandQueue *cmdq); 
@@ -29,6 +31,11 @@ void
 mtCommandBufferOnComplete(MtCommandQueue * __restrict cmdb,
                           void           * __restrict sender,
                           MtCommandBufferOnCompleteFn oncomplete);
+
+MT_EXPORT
+void
+mtCommandBufferOnCompleteNoSender(MtCommandQueue * __restrict cmdb,
+                          MtCommandBufferOnCompleteFnNoSender oncomplete);
 
 MT_EXPORT
 void

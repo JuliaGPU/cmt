@@ -34,7 +34,7 @@ MT_EXPORT
 MtRenderPipeline*
 mtNewRenderState(MtDevice     *device,
                     MtRenderDesc *pipDesc, 
-                      NsError *error);
+                      NsError **error);
 
 MT_EXPORT
 void
